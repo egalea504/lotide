@@ -11,10 +11,9 @@ const findKey = function(object, callback) {
     // if callback of the key is true then return the key and stop loop
     if (callback(object[key])) {
       return key;
-      break;
     }
-  };
-}
+  }
+};
 
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
