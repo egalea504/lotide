@@ -4,7 +4,4 @@ const assertEqual = function(actual, expected) {
   } else console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected} 🛑🛑🛑`);
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("Light", "Light");
-assertEqual(1,3);
+module.exports = assertEqual;
