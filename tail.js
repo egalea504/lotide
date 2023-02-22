@@ -1,3 +1,4 @@
+// description: function returns the last index for a given array
 // function exported - it will be imported in tailTest to proceed with the validation tests
 
 const tail = function(array) {

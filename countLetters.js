@@ -1,39 +1,25 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected} ✅✅✅`);
-  } else console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected} 🛑🛑🛑`);
-};
+// description: countLetters takes in function and outputs the number of occurences for each letter within it
 
+// function takes in a sentence
 const countLetters = function(sentence) {
+  // defines an object to which we will push final results
   const results = {};
 
+  // loop through each letter in the sentence
   for (const letter of sentence) {
 
+    // if the letter isn't equal to a space
     if (letter !== " ") {
+      // if the letter already exists in the results object - add 1 to letter count
       if (results[letter]) {
         results[letter] += 1;
+        // add new letter to results object
       } else results[letter] = 1;
     }
   }
-  
+
+  // return the final results for each letter
   return results;
 };
 
-
-const test1 = 'how are you';
-
-const result1 = countLetters(test1);
-console.log(result1);
-
-assertEqual(result1["h"], 1);
-assertEqual(result1["w"], 1);
-assertEqual(result1["z", undefined]);
-
-const test2 = "is this working";
-
-const result2 = countLetters(test2);
-console.log(result2);
-
-assertEqual(result2["i"], 3);
-assertEqual(result2["j"], undefined);
-
+module.exports = countLetters;

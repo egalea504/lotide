@@ -11,19 +11,19 @@ const eqArrays = function(a, b) {
   return result;
 };
   
-const assertArraysEqual = function(actual, expected) {
+// const assertArraysEqual = function(actual, expected) {
 
-  if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected} ✅✅✅`);
-  } else console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected} 🛑🛑🛑`);
-};
+//   if (eqArrays(actual, expected)) {
+//     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected} ✅✅✅`);
+//   } else console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected} 🛑🛑🛑`);
+// };
 
-/* This function should take in a source array and a itemsToRemove array.
-* It should return a new array with only those elements from source that are not present in the itemsToRemove array.
-*/
+// /* This function should take in a source array and a itemsToRemove array.
+// * It should return a new array with only those elements from source that are not present in the itemsToRemove array.
+// */
 
-//Steps
-//evaluate current array and remove all items that are not wanted - create a new array and push only wanted objects
+// //Steps
+// //evaluate current array and remove all items that are not wanted - create a new array and push only wanted objects
 
 const without = function(itemsArray, itemsToRemove) {
   let finalItemsArray = []; // --> new array in which we will push final items
@@ -38,14 +38,8 @@ const without = function(itemsArray, itemsToRemove) {
     } if (!foundInItemsToRemove) {
       finalItemsArray.push(itemsArray[i]);
     }
-  } console.log(finalItemsArray);
+  } return finalItemsArray; 
 };
 
-without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"];
-without([3, 4, "ten", "something"], ["ten", 3]);
+module.exports = without;
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
